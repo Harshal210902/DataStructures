@@ -1,7 +1,7 @@
-class Disjointset{
+class DSU{
     vector<int> rank, parent, size;
 public:
-    Disjointset(int n)
+    DSU(int n)
     {
         rank.resize(n+1,0);
         size.resize(n+1,1);
