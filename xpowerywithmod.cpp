@@ -1,6 +1,6 @@
-ll xpowery(ll x, ll y, ll p)
+long long xpowery(long long x, long long y, long long p)
 {
-    ll res = 1; 
+    long long res = 1; 
     x = x % p;
  
     while (y > 0) {
