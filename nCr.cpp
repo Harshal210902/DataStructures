@@ -28,14 +28,14 @@ unsigned long long divide(unsigned long long x, unsigned long long y, int p)
 {
     return mul(x, modInverse(y, p), p);
 }
-unsigned long long nCrModPFermat(unsigned long long n, int r, int p)
+unsigned long long nCr(unsigned long long n, int r, int p)
 {
     if (n < r)
         return 0;
     if (r == 0)
         return 1;
     if (n - r < r)
-        return nCrModPFermat(n, n - r, p);
+        return nCr(n, n - r, p);
 
     unsigned long long res = 1;
     for (int i = r; i >= 1; i--)
