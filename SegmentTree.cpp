@@ -21,7 +21,7 @@ public:
     int query(int ind, int l, int r, int low, int high)
     {
         if(l>high || r<low) return INT_MAX;
-        if(l<=low && high<=r) return seg[ind];
+        if(l<=low && high<=r) return seg[ind]; //if range is under then return it.
         
         int mid = low+ (high-low)/2;
         int left= query(2*ind+1, l, r, low, mid);
@@ -29,7 +29,7 @@ public:
         return min(left,right);//var
     }
 
-    void update(int ind, int low, int high, int i, int val)
+    void update(int ind, int low, int high, int i, int val)//ind->index to be changed, low->starting range(0), high->ending range(n-1), i->each root index(2i+1/2i+2), val->val to be changed
     {
         if(low==high)
         {
